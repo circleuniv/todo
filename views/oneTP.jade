@@ -1,0 +1,11 @@
+- var fjo= "pencil" + oneid
+- var fjk= "remove" + oneid
+
+button.btn.btn-default.btn-xs(type='button', id=fjo, data-toggle='modal', data-target='#myModal')
+   span.glyphicon.glyphicon-pencil(aria-hidden='true')
+button.btn.btn-default.btn-xs(type='button', id=fjk)
+   span.glyphicon.glyphicon-remove(aria-hidden='true')
+  span(class=fjo)=onemsg
+p
+
+script(src='./javascripts/buttonlist.js')

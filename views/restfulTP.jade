@@ -1,0 +1,47 @@
+extends ./layout
+
+block page-header
+    h1 Learning RESTful by ToDo
+
+block content
+    input(id="MsgTB", type="text", name="MsgTB")
+    button#plus.btn.btn-default.btn-sm(type='button')
+      span.glyphicon.glyphicon-plus(aria-hidden='true')
+    button#search.btn.btn-default.btn-sm(type='button')
+      span.glyphicon.glyphicon-search(aria-hidden='true')
+
+    #itemset
+        for item in itemlist
+          - var foo= "pencil" + item.id
+          - var fkk= "remove" + item.id
+          - var rec= "record" + item.id
+          div(id=rec)
+            button.btn.btn-default.btn-xs(type='button', id=foo,
+            data-toggle='modal', data-target='#myModal')
+              span.glyphicon.glyphicon-pencil(aria-hidden='true')
+            button.btn.btn-default.btn-xs(type='button', id=fkk)
+              span.glyphicon.glyphicon-remove(aria-hidden='true')
+            span(class=foo)=item.message
+            p
+        //else
+        // p 目前尚未新增任何資料
+
+    
+    // Modal
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#myModalLabel.modal-title 編輯
+          .modal-body
+            form
+              .form-group
+                label.control-label(for='message-text') Message:
+                textarea#message-text.form-control
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') 關閉
+            button.btn.btn-primary(type='button', id='saveitem') 存檔
+
+    script(src='./javascripts/restfuljs.js')

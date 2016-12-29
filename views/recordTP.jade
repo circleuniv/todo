@@ -1,0 +1,14 @@
+for item in itemlist
+  - var foo= "pencil" + item.id
+  - var fkk= "remove" + item.id
+  - var rec= "record" + item.id
+  div(id=rec)   
+    button.btn.btn-default.btn-xs(type='button', id=foo,
+    data-toggle='modal', data-target='#myModal')
+      span.glyphicon.glyphicon-pencil(aria-hidden='true')
+    button.btn.btn-default.btn-xs(type='button', id=fkk)
+      span.glyphicon.glyphicon-remove(aria-hidden='true')
+    span(class=foo)=item.message
+    p
+
+script(src='./javascripts/buttonlist.js')
