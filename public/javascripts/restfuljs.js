@@ -1,4 +1,4 @@
-var reqdata={};
+﻿var reqdata={};
 
 //做新增 button 的處理...
 $("#plus").on("click",function(){

@@ -1,4 +1,4 @@
-var reqdata={};
+﻿var reqdata={};
 
 //做列表items button 的處理....
 $('#itemset button').bind('click', function(){
